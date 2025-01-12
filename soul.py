@@ -329,7 +329,7 @@ def start_message(message):
         print(f"Error while processing /start command: {e}")
 
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     asyncio_thread = Thread(target=start_asyncio_thread, daemon=True)
     asyncio_thread.start()
     logging.info("Starting Codespace activity keeper and Telegram bot...")
