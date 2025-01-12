@@ -285,22 +285,22 @@ def myinfo_command(message):
 
 @bot.message_handler(commands=['rules'])
 def rules_command(message):
-    try:
-        keyboard = types.InlineKeyboardMarkup()
-        
-        button1 = types.InlineKeyboardButton("❤‍🩹JOIN OUR CHANNEL❤‍🩹", url="https://t.me/GODMODBYRAVI")
-        button2 = types.InlineKeyboardButton("👤CONTACT OWNER 👤", url="https://t.me/PRO_GAMER_VIP_OWNER")     
-        keyboard.add(button1)
-        keyboard.add(button2)
-        
     rules_text = (
         "*📜 Bot Rules - Keep It Cool!\n\n"
         "1. No spamming attacks! ⛔ \nRest for 5-6 matches between DDOS.\n\n"
         "2. Limit your kills! 🔫 \nStay under 30-40 kills to keep it fair.\n\n"
         "3. Play smart! 🎮 \nAvoid reports and stay low-key.\n\n"
+        "4. No mods allowed! 🚫 \nUsing hacked files will get you banned.\n\n"
+        "5. Be respectful! 🤝 \nKeep communication friendly and fun.\n\n"
+        "6. Report issues! 🛡 \nMessage TO Owner for any problems.\n\n"
+        "💡 Follow the rules and let’s enjoy gaming together!*"
     )
 
-        bot.send_message(message.chat.id, help_text, reply_markup=keyboard, parse_mode='Markdown')
+    try:
+        bot.send_message(message.chat.id, rules_text, parse_mode='Markdown')
+    except Exception as e:
+        print(f"Error while processing /rules command: {e}")
+
     except Exception as e:
         print(f"Error while processing /rules command: {e}")
 
